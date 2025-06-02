@@ -75,7 +75,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="rounded-lg overflow-hidden bg-black/50 border border-violet-500/20 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-300 group"
+              className="overflow-hidden bg-black/50 border border-violet-500/20 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-300 group"
             >
               <div className="relative overflow-hidden">
                 <picture>
@@ -127,7 +127,8 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </section>
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-300 opacity-10 blur-[160px] rounded-full -translate-x-1/4 -translate-y-1/4 z-0" />
+      </section>
   );
 };
 

@@ -17,18 +17,31 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-gradient-to-b from-black via-zinc-900 to-black text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-10 text-center">Experience</h2>
-        <div className="relative border-l border-fuchsia-600 pl-8 space-y-12">
-          {experiences.map((exp, i) => (
-            <div key={i} className="relative">
-              <div className="absolute w-4 h-4 bg-fuchsia-500 rounded-full left-[-9px] top-1" />
-              <h3 className="text-xl font-semibold">{exp.role}</h3>
-              <p className="text-zinc-400">{exp.company} • <span className="text-sm">{exp.period}</span></p>
-              <p className="mt-2 text-zinc-300">{exp.desc}</p>
-            </div>
-          ))}
+    <section
+      id="experience"
+      className="bg-gradient-to-b from-black via-zinc-900 to-black text-white py-20 px-6 relative overflow-hidden"
+    >
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold mb-16 text-center">Experience</h2>
+
+        {/* Vertical Path */}
+        <div className="relative">
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-fuchsia-700 rounded-full z-0" />
+
+          <div className="flex flex-col space-y-20 relative z-10">
+            {experiences.map((exp, i) => (
+              <div
+                key={i}
+                className={`w-full md:w-1/2 px-6 py-6 rounded-lg bg-zinc-800 shadow-xl transform transition-all duration-700 hover:scale-[1.02]
+                ${i % 2 === 0 ? 'ml-auto origin-left' : 'mr-auto origin-right'} animate-fade-in-up`}
+              >
+                <div className="text-fuchsia-500 font-semibold text-sm mb-1">{exp.period}</div>
+                <h3 className="text-xl font-bold">{exp.role}</h3>
+                <p className="text-zinc-400">{exp.company}</p>
+                <p className="text-zinc-300 mt-2">{exp.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
