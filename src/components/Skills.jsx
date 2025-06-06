@@ -3,7 +3,7 @@ import htmlIcon from "../assets/tech/html5.svg"
 import cssIcon from "../assets/tech/css3.svg"
 import javascriptIcon from "../assets/tech/javascript.svg"
 import reactIcon from "../assets/tech/react.svg"
-import nodeIcon from "../assets/tech/nodejs.svg"
+import pythonIcon from "../assets/tech/python.svg"
 import mysqlIcon from "../assets/tech/mysql.svg"
 import electronIcon from "../assets/tech/electron.svg"
 import threeIcon from "../assets/tech/threejs.svg"
@@ -23,7 +23,7 @@ const skills = [
   { name: "GitHub", icon: githubIcon },
   { name: "React", icon: reactIcon },
   { name: "Vite", icon: viteIcon },
-  { name: "Node.js", icon: nodeIcon },
+  { name: "Python", icon: pythonIcon },
   { name: "MySQL", icon: mysqlIcon },
   { name: "Electron", icon: electronIcon },
   { name: "TailwindCSS", icon: tailwindIcon },

@@ -9,9 +9,12 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import './index.css'
 
+import { Toaster } from 'react-hot-toast';
+
 function App(){
   return(
     <div className="bg-black text-white min-h-screen scroll-smooth">
+      <Toaster position="bottom-right" />
       <TopNavbar/>
       <Navbar/>
       <Hero/>
