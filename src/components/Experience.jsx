@@ -1,49 +1,56 @@
-import React from 'react';
+import React from "react";
 
 const experiences = [
   {
-    role: 'Full Stack Developer Intern',
-    company: 'NeuroTech AI',
-    period: 'Jan 2024 – Present',
-    desc: 'Built AI tools using React and Flask. Created real-time dashboards for ML model training status.',
+    title: "Full–Stack Developer",
+    company: "Hackathon",
+    duration: "Jan 2023 – present",
+    responsibilities: [
+      "Led the integration of native system-level APIs within a React + Electron environment for real-time desktop performance tracking.",
+      "Spearheaded the development of a 3D visual experience using Three.js, including custom camera, lighting, and orbital controls.",
+      "Engineered a real-time collaboration tool using WebSockets and Canvas API to ensure multi-user drawing sync with zero lag.",
+      "Designed and implemented AI-driven financial analytics by integrating OpenAI and REST APIs into a responsive dashboard."
+    ],
   },
-  {
-    role: 'Open Source Contributor',
-    company: 'Three.js / Vite',
-    period: '2023',
-    desc: 'Contributed to WebGL visual tools and improved build pipeline performance by 15%.',
-  },
+  // You can add more experience items here
 ];
 
-export default function Experience() {
+const Experience = () => {
   return (
-    <section
-      id="experience"
-      className="bg-gradient-to-b from-black via-zinc-900 to-black text-white py-20 px-6 relative overflow-hidden"
-    >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 text-center">Experience</h2>
+    <section id="experience" className="relative py-20 px-6 text-white">
+      <p className="text-center text-sm text-gray-400 mb-2">WHAT I HAVE DONE SO FAR</p>
+      <h2 className="text-center text-4xl font-bold mb-22">Work Experience.</h2>
 
-        {/* Vertical Path */}
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-fuchsia-700 rounded-full z-0" />
+      <div className="relative max-w-5xl mx-auto">
+        {/* Vertical Line */}
+        <div className="absolute left-1/2 top-0 h-full w-1 bg-white/30 rounded-full transform -translate-x-1/2" />
 
-          <div className="flex flex-col space-y-20 relative z-10">
-            {experiences.map((exp, i) => (
-              <div
-                key={i}
-                className={`w-full md:w-1/2 px-6 py-6 rounded-lg bg-zinc-800 shadow-xl transform transition-all duration-700 hover:scale-[1.02]
-                ${i % 2 === 0 ? 'ml-auto origin-left' : 'mr-auto origin-right'} animate-fade-in-up`}
-              >
-                <div className="text-fuchsia-500 font-semibold text-sm mb-1">{exp.period}</div>
-                <h3 className="text-xl font-bold">{exp.role}</h3>
-                <p className="text-zinc-400">{exp.company}</p>
-                <p className="text-zinc-300 mt-2">{exp.desc}</p>
+        {experiences.map((exp, index) => (
+          <div key={index} className="relative flex items-start mb-20">
+            {/* Card on the left */}
+            <div className="w-1/2 pr-10 flex justify-end">
+              <div className="bg-violet-800/40 backdrop-blur-md p-6 rounded-xl shadow-md w-full max-w-md">
+                <h3 className="text-xl font-bold">{exp.title}</h3>
+                <p className="text-violet-300 text-sm mb-4">{exp.company}</p>
+                <ul className="list-disc pl-5 text-sm space-y-3">
+                  {exp.responsibilities.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
               </div>
-            ))}
+            </div>
+
+            
+            <div className="absolute left-1/2 ml-17 top-0 transform -translate-x-1/2 flex items-center mt-4">
+              <div className="w-7 h-7 rounded-full border-2 border-white bg-violet-600 z-10" />
+              <div className="text-sm text-white ml-4 whitespace-nowrap">{exp.duration}</div>
+            </div>
           </div>
-        </div>
+
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default Experience;

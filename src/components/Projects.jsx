@@ -2,7 +2,6 @@ import React from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaCode } from 'react-icons/fa';
 import systemMonitorDesktop from '../assets/systemMonitor1.png'
-import systemMonitorTablet from '../assets/systemMonitor2.png'
 import systemMonitorMobile from '../assets/systemMonitor3.png'
 import finai from '../assets/finai.png'
 import whiteboard from '../assets/whiteboard.png'

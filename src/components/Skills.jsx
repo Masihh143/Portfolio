@@ -1,36 +1,57 @@
 import React from 'react';
+import htmlIcon from "../assets/tech/html5.svg"
+import cssIcon from "../assets/tech/css3.svg"
+import javascriptIcon from "../assets/tech/javascript.svg"
+import reactIcon from "../assets/tech/react.svg"
+import nodeIcon from "../assets/tech/nodejs.svg"
+import mysqlIcon from "../assets/tech/mysql.svg"
+import electronIcon from "../assets/tech/electron.svg"
+import threeIcon from "../assets/tech/threejs.svg"
+import socketIcon from "../assets/tech/socket.svg"
+import openIcon from "../assets/tech/openai.svg"
+import tailwindIcon from "../assets/tech/tailwind.svg"
+import bootstrapIcon from "../assets/tech/bootstrap.svg"
+import gitIcon from "../assets/tech/git.svg"
+import githubIcon from "../assets/tech/github.svg"
+import viteIcon from "../assets/tech/vite.svg"
 
 const skills = [
-  { name: 'JavaScript', level: 90 },
-  { name: 'React.js', level: 85 },
-  { name: 'Python', level: 80 },
-  { name: 'Three.js', level: 75 },
-  { name: 'AI/ML', level: 65 },
+  { name: "HTML5", icon: htmlIcon },
+  { name: "CSS3", icon: cssIcon },
+  { name: "JavaScript", icon: javascriptIcon },
+  { name: "Git", icon: gitIcon },
+  { name: "GitHub", icon: githubIcon },
+  { name: "React", icon: reactIcon },
+  { name: "Vite", icon: viteIcon },
+  { name: "Node.js", icon: nodeIcon },
+  { name: "MySQL", icon: mysqlIcon },
+  { name: "Electron", icon: electronIcon },
+  { name: "TailwindCSS", icon: tailwindIcon },
+  { name: "Bootstrap", icon: bootstrapIcon},
+  { name: "Three.js", icon: threeIcon },
+  { name: "Socket.io", icon: socketIcon },
+  { name: "OpenAI API", icon: openIcon },
 ];
 
-export default function Skills() {
+const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen bg-black text-white py-20 px-6 relative">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12">My Skills</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {skills.map((skill, i) => (
-            <div key={i} className="bg-gradient-to-br from-violet-700/30 to-fuchsia-600/20 p-6 rounded-lg shadow-md border border-white/10">
-              <h3 className="text-xl mb-2">{skill.name}</h3>
-              <div className="w-full h-2 bg-white/10 rounded-full">
-                <div
-                  className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full transition-all duration-1000"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+    <section id="tech" className="py-20 px-4 sm:px-8 md:px-16 lg:px-32 text-white">
+      <p className="text-center text-sm text-gray-400 mb-2">TECH STACK</p>
+      <h2 className="text-center text-4xl font-bold mb-22">Skills</h2>      
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-8 place-items-center">
+        {skills.map((tech, index) => (
+          <div key={index} className="flex flex-col items-center group">
+            <img
+              src={tech.icon}
+              alt={tech.name}
+              className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+            <p className="mt-2 text-sm text-white/70 group-hover:text-white">{tech.name}</p>
+          </div>
+        ))}
       </div>
-
-      {/* Pulse Glow */}
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-fuchsia-400/10 blur-[100px] rounded-full pointer-events-none" />
     </section>
   );
-}
+};
+
+export default Skills;
